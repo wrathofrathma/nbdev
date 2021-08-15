@@ -3,7 +3,7 @@
   "title": "Nbdev Code Tour",
   "steps": [
     {
-      "file": "nbs/nbdev/export2html.py",
+      "file": "nbdev/export2html.py",
       "description": "This is one of the main entry points to nbdev.  `nbdev_build_lib` is a CLI command that is available to you when you install nbdev.  The `@call_parse` decorator makes this particular function available as a cli command.  You can read about it here: https://fastcore.fast.ai/script.html#call_parse\n\nThis function calls two things:\n\n1. write_tmpls() - this hydrates and refreshes a bunch of metadata necessary for things like the static site that hosts the documentation.  This does not convert the notebooks to documents (this is handled by another function to be discussed later).\n2. notebook2script() - this performs more interesting work, which \"compiles\" the notebooks to python scripts, based upon various flags and metadata you inject into notebooks in the form of special comments.  We will look at this function next.\n\n> Aside: Using `codetour` with nbdev is not the greatest fit, as you are probably better off reading the notebooks, since the notebooks contain documentation and tests in-situ right along side the source code.  You can also run the code and tests as well.  However, I work with the author of `codetour` and wanted to try it!",
       "line": 463,
       "selection": {
@@ -18,7 +18,7 @@
       }
     },
     {
-      "file": "nbs/nbdev/export.py",
+      "file": "nbdev/export.py",
       "description": "`notebook2script` updates some additional metadata, but the high level idea is that it loops through all notebooks, which are enumerated in the variable `files`, and \"compiles\" the code therein to appropriate python modules.  Note that the `nbglob` function is just a convenience function that grabs notebooks recursively, but ignores various artifacts like checkpoints that notebooks can have. \n\nNext, we will take a look at `_notebook2script`.",
       "line": 430
     }
