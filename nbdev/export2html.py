@@ -654,7 +654,7 @@ def nbdev_build_docs(
 def nbdev_nb2md(
     fname:str,  # A notebook file name to convert
     dest:str='.',  # The destination folder
-    img_path:None="",  # Folder to export images to
+    img_path:str="",  # Folder to export images to
     jekyll:bool_arg=False  # To use jekyll metadata for your markdown file or not
 ):
     "Convert the notebook in `fname` to a markdown file"
